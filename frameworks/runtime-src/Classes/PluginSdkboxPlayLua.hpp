@@ -33,4 +33,11 @@ int register_all_PluginSdkboxPlayLua(lua_State* tolua_S);
 
 
 
+
+
+
+
+
+
+
 #endif // __PluginSdkboxPlayLua_h__

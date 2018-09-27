@@ -5,76 +5,6 @@
 
 
 
-int lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 1)
-    {
-        std::string arg0;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:getVideosPerReward");
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward'", nullptr);
-            return 0;
-        }
-        int ret = sdkbox::PluginAdColony::getVideosPerReward(arg0);
-        tolua_pushnumber(tolua_S,(lua_Number)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getVideosPerReward",argc, 1);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward'.",&tolua_err);
-#endif
-    return 0;
-}
-int lua_PluginAdColonyLua_PluginAdColony_getCustomID(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getCustomID'", nullptr);
-            return 0;
-        }
-        std::string ret = sdkbox::PluginAdColony::getCustomID();
-        tolua_pushcppstring(tolua_S,ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getCustomID",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getCustomID'.",&tolua_err);
-#endif
-    return 0;
-}
 int lua_PluginAdColonyLua_PluginAdColony_zoneStatusForZone(lua_State* tolua_S)
 {
     int argc = 0;
@@ -147,6 +77,40 @@ int lua_PluginAdColonyLua_PluginAdColony_show(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID'", nullptr);
+            return 0;
+        }
+        std::string ret = sdkbox::PluginAdColony::getUniqueDeviceID();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getUniqueDeviceID",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_PluginAdColonyLua_PluginAdColony_getStatus(lua_State* tolua_S)
 {
     int argc = 0;
@@ -183,6 +147,40 @@ int lua_PluginAdColonyLua_PluginAdColony_getStatus(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_PluginAdColonyLua_PluginAdColony_init(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_init'", nullptr);
+            return 0;
+        }
+        sdkbox::PluginAdColony::init();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:init",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_init'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_PluginAdColonyLua_PluginAdColony_videoAdCurrentlyRunning(lua_State* tolua_S)
 {
     int argc = 0;
@@ -214,74 +212,6 @@ int lua_PluginAdColonyLua_PluginAdColony_videoAdCurrentlyRunning(lua_State* tolu
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_videoAdCurrentlyRunning'.",&tolua_err);
-#endif
-    return 0;
-}
-int lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff'", nullptr);
-            return 0;
-        }
-        sdkbox::PluginAdColony::turnAllAdsOff();
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:turnAllAdsOff",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff'.",&tolua_err);
-#endif
-    return 0;
-}
-int lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier'", nullptr);
-            return 0;
-        }
-        std::string ret = sdkbox::PluginAdColony::getVendorIdentifier();
-        tolua_pushcppstring(tolua_S,ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getVendorIdentifier",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier'.",&tolua_err);
 #endif
     return 0;
 }
@@ -323,7 +253,7 @@ int lua_PluginAdColonyLua_PluginAdColony_setUserMetadata(lua_State* tolua_S)
 #endif
     return 0;
 }
-int lua_PluginAdColonyLua_PluginAdColony_init(lua_State* tolua_S)
+int lua_PluginAdColonyLua_PluginAdColony_setGDPR(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -338,26 +268,28 @@ int lua_PluginAdColonyLua_PluginAdColony_init(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S) - 1;
 
-    if (argc == 0)
+    if (argc == 1)
     {
+        bool arg0;
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:setGDPR");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_init'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_setGDPR'", nullptr);
             return 0;
         }
-        sdkbox::PluginAdColony::init();
+        sdkbox::PluginAdColony::setGDPR(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:init",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:setGDPR",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_init'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_setGDPR'.",&tolua_err);
 #endif
     return 0;
 }
-int lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID(lua_State* tolua_S)
+int lua_PluginAdColonyLua_PluginAdColony_getCustomID(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -376,18 +308,18 @@ int lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID(lua_State* tolua_S)
     {
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getCustomID'", nullptr);
             return 0;
         }
-        std::string ret = sdkbox::PluginAdColony::getUniqueDeviceID();
+        std::string ret = sdkbox::PluginAdColony::getCustomID();
         tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getUniqueDeviceID",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getCustomID",argc, 0);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getCustomID'.",&tolua_err);
 #endif
     return 0;
 }
@@ -425,7 +357,7 @@ int lua_PluginAdColonyLua_PluginAdColony_getAdvertisingIdentifier(lua_State* tol
 #endif
     return 0;
 }
-int lua_PluginAdColonyLua_PluginAdColony_userInterestedIn(lua_State* tolua_S)
+int lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -440,24 +372,56 @@ int lua_PluginAdColonyLua_PluginAdColony_userInterestedIn(lua_State* tolua_S)
 
     argc = lua_gettop(tolua_S) - 1;
 
-    if (argc == 1)
+    if (argc == 0)
     {
-        std::string arg0;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:userInterestedIn");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_userInterestedIn'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff'", nullptr);
             return 0;
         }
-        sdkbox::PluginAdColony::userInterestedIn(arg0);
+        sdkbox::PluginAdColony::turnAllAdsOff();
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:userInterestedIn",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:turnAllAdsOff",argc, 0);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_userInterestedIn'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_PluginAdColonyLua_PluginAdColony_requestAllAds(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_requestAllAds'", nullptr);
+            return 0;
+        }
+        sdkbox::PluginAdColony::requestAllAds();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:requestAllAds",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_requestAllAds'.",&tolua_err);
 #endif
     return 0;
 }
@@ -494,6 +458,112 @@ int lua_PluginAdColonyLua_PluginAdColony_setCustomID(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_setCustomID'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:getVideoCreditBalance");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance'", nullptr);
+            return 0;
+        }
+        int ret = sdkbox::PluginAdColony::getVideoCreditBalance(arg0);
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getVideoCreditBalance",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        std::string arg0;
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:getVideosPerReward");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward'", nullptr);
+            return 0;
+        }
+        int ret = sdkbox::PluginAdColony::getVideosPerReward(arg0);
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getVideosPerReward",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginAdColony",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier'", nullptr);
+            return 0;
+        }
+        std::string ret = sdkbox::PluginAdColony::getVendorIdentifier();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getVendorIdentifier",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier'.",&tolua_err);
 #endif
     return 0;
 }
@@ -541,7 +611,7 @@ int lua_PluginAdColonyLua_PluginAdColony_notifyIAPComplete(lua_State* tolua_S)
 #endif
     return 0;
 }
-int lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance(lua_State* tolua_S)
+int lua_PluginAdColonyLua_PluginAdColony_userInterestedIn(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -559,21 +629,21 @@ int lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance(lua_State* tolua_
     if (argc == 1)
     {
         std::string arg0;
-        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:getVideoCreditBalance");
+        ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginAdColony:userInterestedIn");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginAdColonyLua_PluginAdColony_userInterestedIn'", nullptr);
             return 0;
         }
-        int ret = sdkbox::PluginAdColony::getVideoCreditBalance(arg0);
-        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        sdkbox::PluginAdColony::userInterestedIn(arg0);
+        lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:getVideoCreditBalance",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginAdColony:userInterestedIn",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginAdColonyLua_PluginAdColony_userInterestedIn'.",&tolua_err);
 #endif
     return 0;
 }
@@ -623,22 +693,24 @@ int lua_register_PluginAdColonyLua_PluginAdColony(lua_State* tolua_S)
     tolua_cclass(tolua_S,"PluginAdColony","sdkbox.PluginAdColony","",nullptr);
 
     tolua_beginmodule(tolua_S,"PluginAdColony");
-        tolua_function(tolua_S,"getVideosPerReward", lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward);
-        tolua_function(tolua_S,"getCustomID", lua_PluginAdColonyLua_PluginAdColony_getCustomID);
         tolua_function(tolua_S,"zoneStatusForZone", lua_PluginAdColonyLua_PluginAdColony_zoneStatusForZone);
         tolua_function(tolua_S,"show", lua_PluginAdColonyLua_PluginAdColony_show);
-        tolua_function(tolua_S,"getStatus", lua_PluginAdColonyLua_PluginAdColony_getStatus);
-        tolua_function(tolua_S,"videoAdCurrentlyRunning", lua_PluginAdColonyLua_PluginAdColony_videoAdCurrentlyRunning);
-        tolua_function(tolua_S,"turnAllAdsOff", lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff);
-        tolua_function(tolua_S,"getVendorIdentifier", lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier);
-        tolua_function(tolua_S,"setUserMetadata", lua_PluginAdColonyLua_PluginAdColony_setUserMetadata);
-        tolua_function(tolua_S,"init", lua_PluginAdColonyLua_PluginAdColony_init);
         tolua_function(tolua_S,"getUniqueDeviceID", lua_PluginAdColonyLua_PluginAdColony_getUniqueDeviceID);
+        tolua_function(tolua_S,"getStatus", lua_PluginAdColonyLua_PluginAdColony_getStatus);
+        tolua_function(tolua_S,"init", lua_PluginAdColonyLua_PluginAdColony_init);
+        tolua_function(tolua_S,"videoAdCurrentlyRunning", lua_PluginAdColonyLua_PluginAdColony_videoAdCurrentlyRunning);
+        tolua_function(tolua_S,"setUserMetadata", lua_PluginAdColonyLua_PluginAdColony_setUserMetadata);
+        tolua_function(tolua_S,"setGDPR", lua_PluginAdColonyLua_PluginAdColony_setGDPR);
+        tolua_function(tolua_S,"getCustomID", lua_PluginAdColonyLua_PluginAdColony_getCustomID);
         tolua_function(tolua_S,"getAdvertisingIdentifier", lua_PluginAdColonyLua_PluginAdColony_getAdvertisingIdentifier);
-        tolua_function(tolua_S,"userInterestedIn", lua_PluginAdColonyLua_PluginAdColony_userInterestedIn);
+        tolua_function(tolua_S,"turnAllAdsOff", lua_PluginAdColonyLua_PluginAdColony_turnAllAdsOff);
+        tolua_function(tolua_S,"requestAllAds", lua_PluginAdColonyLua_PluginAdColony_requestAllAds);
         tolua_function(tolua_S,"setCustomID", lua_PluginAdColonyLua_PluginAdColony_setCustomID);
-        tolua_function(tolua_S,"notifyIAPComplete", lua_PluginAdColonyLua_PluginAdColony_notifyIAPComplete);
         tolua_function(tolua_S,"getVideoCreditBalance", lua_PluginAdColonyLua_PluginAdColony_getVideoCreditBalance);
+        tolua_function(tolua_S,"getVideosPerReward", lua_PluginAdColonyLua_PluginAdColony_getVideosPerReward);
+        tolua_function(tolua_S,"getVendorIdentifier", lua_PluginAdColonyLua_PluginAdColony_getVendorIdentifier);
+        tolua_function(tolua_S,"notifyIAPComplete", lua_PluginAdColonyLua_PluginAdColony_notifyIAPComplete);
+        tolua_function(tolua_S,"userInterestedIn", lua_PluginAdColonyLua_PluginAdColony_userInterestedIn);
         tolua_function(tolua_S,"cancelAd", lua_PluginAdColonyLua_PluginAdColony_cancelAd);
     tolua_endmodule(tolua_S);
     std::string typeName = typeid(sdkbox::PluginAdColony).name();
@@ -649,12 +721,39 @@ int lua_register_PluginAdColonyLua_PluginAdColony(lua_State* tolua_S)
 TOLUA_API int register_all_PluginAdColonyLua(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
-	
-	tolua_module(tolua_S,"sdkbox",0);
-	tolua_beginmodule(tolua_S,"sdkbox");
+
+	std::stringstream ss("sdkbox");
+    std::vector<std::string> nsvec;
+    std::string item;
+    while (std::getline(ss, item, '.')) {
+        nsvec.push_back(item);
+    }
+    int nsLen = nsvec.size();
+    item = nsvec.front();
+    nsvec.erase(nsvec.begin());
+
+    tolua_module(tolua_S, item.c_str(), 0);
+    tolua_beginmodule(tolua_S, item.c_str());
+
+    while (nsvec.size() > 0) {
+        item = nsvec.front();
+        nsvec.erase(nsvec.begin());
+        lua_pushstring(tolua_S, item.c_str()); // m name
+        lua_rawget(tolua_S, -2);             // m value
+        if (!lua_istable(tolua_S, -1)) {
+            lua_pop(tolua_S, 1);             // m
+            lua_newtable(tolua_S);           // m t
+            lua_pushstring(tolua_S, item.c_str()); // m t name
+            lua_pushvalue(tolua_S, -2);      // m t name t
+            lua_rawset(tolua_S, -4);         // m t
+        }
+    }
 
 	lua_register_PluginAdColonyLua_PluginAdColony(tolua_S);
 
+	if (nsLen > 1) {
+        lua_pop(tolua_S, nsLen - 1); // m
+    }
 	tolua_endmodule(tolua_S);
 
 	sdkbox::setProjectType("lua");

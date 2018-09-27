@@ -1,9 +1,9 @@
 /*
  * CBInPlay.h
  * Chartboost
- * 6.4.4
+ * 7.2.0
  *
- * Copyright 2011 Chartboost. All rights reserved.
+ * Copyright 2018 Chartboost. All rights reserved.
  */
 
 #import "Chartboost.h"
@@ -84,7 +84,7 @@
 @interface CBInPlay : NSObject
 
 /*! @abstract CBLocation target for the CBInPlay ad. */
-@property (nonatomic, readonly) CBLocation location;
+@property (nonatomic, strong, readonly) CBLocation location;
 
 /*! @abstract Image byte data for the CBInPlay icon. */
 @property (nonatomic, strong, readonly) NSData *appIcon;

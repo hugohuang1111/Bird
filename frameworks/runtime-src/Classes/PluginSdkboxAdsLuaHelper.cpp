@@ -185,39 +185,39 @@ int lua_PluginSdkboxAdsLua_PluginSdkboxAds_playAd(lua_State* tolua_S)
 }
 
 
-int lua_PluginSdkboxAdsLua_PluginSdkboxAds_cacheControl(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
+// int lua_PluginSdkboxAdsLua_PluginSdkboxAds_cacheControl(lua_State* tolua_S)
+// {
+//     int argc = 0;
+//     bool ok  = true;
+// #if COCOS2D_DEBUG >= 1
+//     tolua_Error tolua_err;
+// #endif
 
-    std::string arg0;
-    std::map<std::string,std::string> arg2;
+//     std::string arg0;
+//     std::map<std::string,std::string> arg2;
 
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginSdkboxAds",0,&tolua_err)) goto tolua_lerror;
-#endif
+// #if COCOS2D_DEBUG >= 1
+//     if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginSdkboxAds",0,&tolua_err)) goto tolua_lerror;
+// #endif
 
-    argc = lua_gettop(tolua_S)-1;
+//     argc = lua_gettop(tolua_S)-1;
 
 
-    ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginSdkboxAds:cacheControl");
-    ok&=luaval_to_std_map_string_string( tolua_S, 3, &arg2, "sdkbox.PluginSdkboxAds:cacheControl");
-    if (ok) {
-        sdkbox::PluginSdkboxAds::cacheControl(arg0, arg2);
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
+//     ok &= luaval_to_std_string(tolua_S, 2,&arg0, "sdkbox.PluginSdkboxAds:cacheControl");
+//     ok&=luaval_to_std_map_string_string( tolua_S, 3, &arg2, "sdkbox.PluginSdkboxAds:cacheControl");
+//     if (ok) {
+//         sdkbox::PluginSdkboxAds::cacheControl(arg0, arg2);
+//         lua_settop(tolua_S, 1);
+//         return 1;
+//     }
 
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginSdkboxAdsLua_PluginSdkboxAds_cacheControl'.",&tolua_err);
-#endif
+// #if COCOS2D_DEBUG >= 1
+//     tolua_lerror:
+//     tolua_error(tolua_S,"#ferror in function 'lua_PluginSdkboxAdsLua_PluginSdkboxAds_cacheControl'.",&tolua_err);
+// #endif
 
-    return 0;
-}
+//     return 0;
+// }
 
 int extern_PluginSdkboxAds(lua_State* L) {
     if (nullptr == L) {
@@ -230,7 +230,7 @@ int extern_PluginSdkboxAds(lua_State* L) {
     {
         tolua_function(L,"setListener", lua_PluginSdkboxAdsLua_PluginSdkboxAds_setListener);
         tolua_function(L,"playAd", lua_PluginSdkboxAdsLua_PluginSdkboxAds_playAd);
-        tolua_function(L, "cacheControl", lua_PluginSdkboxAdsLua_PluginSdkboxAds_cacheControl);
+        // tolua_function(L, "cacheControl", lua_PluginSdkboxAdsLua_PluginSdkboxAds_cacheControl);
     }
      lua_pop(L, 1);
 

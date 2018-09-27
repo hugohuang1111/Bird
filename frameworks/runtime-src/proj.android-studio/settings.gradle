@@ -3,11 +3,11 @@ project(':libcocos2dx').projectDir = new File(settingsDir, '../../cocos2d-x/coco
 include ':Bird'
 project(':Bird').projectDir = new File(settingsDir, 'app')
 
-include ':gps'
-project(':gps').projectDir = new File(settingsDir, '../../cocos2d-x/cocos/platform/android/java/libs/gps')
+//include ':gps'
+//project(':gps').projectDir = new File(settingsDir, '../../cocos2d-x/cocos/platform/android/java/libs/gps')
 
-include ':facebook_lib'
-project(':facebook_lib').projectDir = new File(settingsDir, '../../cocos2d-x/cocos/platform/android/java/libs/facebook_lib')
+//include ':facebook_lib'
+//project(':facebook_lib').projectDir = new File(settingsDir, '../../cocos2d-x/cocos/platform/android/java/libs/facebook_lib')
 
 include ':libPluginReviewResource'
 project(':libPluginReviewResource').projectDir = new File(settingsDir, '../proj.android/plugin_review_res_project')

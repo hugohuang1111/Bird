@@ -161,9 +161,16 @@ class PluginChartboost
 public:
 
     /*!
+     * Set to restrict Chartboost's ability to collect personal data from the device.
+     * When this is set to YES. IDFA and ip address will not be collected by the SDK or the server.
+     * This method should be called before init
+     */
+    static void restrictDataCollection(bool shouldRestrict);
+    
+    /*!
      * initialize the plugin instance.
      */
-    static void init();
+    static void init(const char* jsonconfig = 0);
 
     /*!
      * show ad by specifying ad name.
@@ -205,6 +212,8 @@ public:
     /*!
      * close any visible Chartboost impressions (interstitials, more apps, rewarded
      * video, etc..) and the loading view (if visible).
+     *
+     * deprecated >= 2.3.x
      */
     static void closeImpression();
 

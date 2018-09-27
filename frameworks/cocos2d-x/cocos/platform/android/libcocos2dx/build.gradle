@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
-        minSdkVersion 10
-        targetSdkVersion 22
+        minSdkVersion 15
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
     }
@@ -26,8 +26,7 @@ android {
 }
 
 dependencies {
-    compile project(':libPluginReviewResource')
-    compile project(':facebook_lib')
-    compile project(':gps')
-    compile fileTree(dir: '../java/libs', include: ['*.jar'], exclude: ['fabric.jar', 'twitter.jar', 'picasso*.jar'])
+    implementation fileTree(dir: '../java/libs',
+            include: ['*.jar'],
+            exclude: ['fabric.jar', 'twitter.jar', 'picasso*.jar', 'android-support-v4.jar', 'support-annotations-*.jar'])
 }

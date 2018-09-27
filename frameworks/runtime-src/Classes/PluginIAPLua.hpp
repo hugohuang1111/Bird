@@ -20,4 +20,11 @@ int register_all_PluginIAPLua(lua_State* tolua_S);
 
 
 
+
+
+
+
+
+
+
 #endif // __PluginIAPLua_h__

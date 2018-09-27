@@ -43,7 +43,7 @@ int lua_PluginChartboostLua_PluginChartboost_handleOpenURL(lua_State* tolua_S)
 #endif
     return 0;
 }
-int lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds(lua_State* tolua_S)
+int lua_PluginChartboostLua_PluginChartboost_restrictDataCollection(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -61,21 +61,21 @@ int lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds(lua_State* tolua_S)
     if (argc == 1)
     {
         bool arg0;
-        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:setAutoCacheAds");
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:restrictDataCollection");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_restrictDataCollection'", nullptr);
             return 0;
         }
-        sdkbox::PluginChartboost::setAutoCacheAds(arg0);
+        sdkbox::PluginChartboost::restrictDataCollection(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:setAutoCacheAds",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:restrictDataCollection",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_restrictDataCollection'.",&tolua_err);
 #endif
     return 0;
 }
@@ -219,6 +219,42 @@ int lua_PluginChartboostLua_PluginChartboost_show(lua_State* tolua_S)
 #endif
     return 0;
 }
+int lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"sdkbox.PluginChartboost",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        bool arg0;
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:setShouldPrefetchVideoContent");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent'", nullptr);
+            return 0;
+        }
+        sdkbox::PluginChartboost::setShouldPrefetchVideoContent(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:setShouldPrefetchVideoContent",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent'.",&tolua_err);
+#endif
+    return 0;
+}
 int lua_PluginChartboostLua_PluginChartboost_cache(lua_State* tolua_S)
 {
     int argc = 0;
@@ -291,7 +327,7 @@ int lua_PluginChartboostLua_PluginChartboost_setShouldDisplayLoadingViewForMoreA
 #endif
     return 0;
 }
-int lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession(lua_State* tolua_S)
+int lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -309,21 +345,21 @@ int lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirs
     if (argc == 1)
     {
         bool arg0;
-        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:setShouldRequestInterstitialsInFirstSession");
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:setAutoCacheAds");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds'", nullptr);
             return 0;
         }
-        sdkbox::PluginChartboost::setShouldRequestInterstitialsInFirstSession(arg0);
+        sdkbox::PluginChartboost::setAutoCacheAds(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:setShouldRequestInterstitialsInFirstSession",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:setAutoCacheAds",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds'.",&tolua_err);
 #endif
     return 0;
 }
@@ -363,7 +399,7 @@ int lua_PluginChartboostLua_PluginChartboost_didPassAgeGate(lua_State* tolua_S)
 #endif
     return 0;
 }
-int lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent(lua_State* tolua_S)
+int lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession(lua_State* tolua_S)
 {
     int argc = 0;
     bool ok  = true;
@@ -381,21 +417,21 @@ int lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent(lua_S
     if (argc == 1)
     {
         bool arg0;
-        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:setShouldPrefetchVideoContent");
+        ok &= luaval_to_boolean(tolua_S, 2,&arg0, "sdkbox.PluginChartboost:setShouldRequestInterstitialsInFirstSession");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession'", nullptr);
             return 0;
         }
-        sdkbox::PluginChartboost::setShouldPrefetchVideoContent(arg0);
+        sdkbox::PluginChartboost::setShouldRequestInterstitialsInFirstSession(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:setShouldPrefetchVideoContent",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "sdkbox.PluginChartboost:setShouldRequestInterstitialsInFirstSession",argc, 1);
     return 0;
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession'.",&tolua_err);
 #endif
     return 0;
 }
@@ -422,6 +458,19 @@ int lua_PluginChartboostLua_PluginChartboost_init(lua_State* tolua_S)
             return 0;
         }
         sdkbox::PluginChartboost::init();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    if (argc == 1)
+    {
+        const char* arg0;
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "sdkbox.PluginChartboost:init"); arg0 = arg0_tmp.c_str();
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_PluginChartboostLua_PluginChartboost_init'", nullptr);
+            return 0;
+        }
+        sdkbox::PluginChartboost::init(arg0);
         lua_settop(tolua_S, 1);
         return 1;
     }
@@ -622,16 +671,17 @@ int lua_register_PluginChartboostLua_PluginChartboost(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"PluginChartboost");
         tolua_function(tolua_S,"handleOpenURL", lua_PluginChartboostLua_PluginChartboost_handleOpenURL);
-        tolua_function(tolua_S,"setAutoCacheAds", lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds);
+        tolua_function(tolua_S,"restrictDataCollection", lua_PluginChartboostLua_PluginChartboost_restrictDataCollection);
         tolua_function(tolua_S,"setStatusBarBehavior", lua_PluginChartboostLua_PluginChartboost_setStatusBarBehavior);
         tolua_function(tolua_S,"isAnyViewVisible", lua_PluginChartboostLua_PluginChartboost_isAnyViewVisible);
         tolua_function(tolua_S,"getCustomID", lua_PluginChartboostLua_PluginChartboost_getCustomID);
         tolua_function(tolua_S,"show", lua_PluginChartboostLua_PluginChartboost_show);
+        tolua_function(tolua_S,"setShouldPrefetchVideoContent", lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent);
         tolua_function(tolua_S,"cache", lua_PluginChartboostLua_PluginChartboost_cache);
         tolua_function(tolua_S,"setShouldDisplayLoadingViewForMoreApps", lua_PluginChartboostLua_PluginChartboost_setShouldDisplayLoadingViewForMoreApps);
-        tolua_function(tolua_S,"setShouldRequestInterstitialsInFirstSession", lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession);
+        tolua_function(tolua_S,"setAutoCacheAds", lua_PluginChartboostLua_PluginChartboost_setAutoCacheAds);
         tolua_function(tolua_S,"didPassAgeGate", lua_PluginChartboostLua_PluginChartboost_didPassAgeGate);
-        tolua_function(tolua_S,"setShouldPrefetchVideoContent", lua_PluginChartboostLua_PluginChartboost_setShouldPrefetchVideoContent);
+        tolua_function(tolua_S,"setShouldRequestInterstitialsInFirstSession", lua_PluginChartboostLua_PluginChartboost_setShouldRequestInterstitialsInFirstSession);
         tolua_function(tolua_S,"init", lua_PluginChartboostLua_PluginChartboost_init);
         tolua_function(tolua_S,"getAutoCacheAds", lua_PluginChartboostLua_PluginChartboost_getAutoCacheAds);
         tolua_function(tolua_S,"closeImpression", lua_PluginChartboostLua_PluginChartboost_closeImpression);
@@ -647,12 +697,39 @@ int lua_register_PluginChartboostLua_PluginChartboost(lua_State* tolua_S)
 TOLUA_API int register_all_PluginChartboostLua(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
-	
-	tolua_module(tolua_S,"sdkbox",0);
-	tolua_beginmodule(tolua_S,"sdkbox");
+
+	std::stringstream ss("sdkbox");
+    std::vector<std::string> nsvec;
+    std::string item;
+    while (std::getline(ss, item, '.')) {
+        nsvec.push_back(item);
+    }
+    int nsLen = nsvec.size();
+    item = nsvec.front();
+    nsvec.erase(nsvec.begin());
+
+    tolua_module(tolua_S, item.c_str(), 0);
+    tolua_beginmodule(tolua_S, item.c_str());
+
+    while (nsvec.size() > 0) {
+        item = nsvec.front();
+        nsvec.erase(nsvec.begin());
+        lua_pushstring(tolua_S, item.c_str()); // m name
+        lua_rawget(tolua_S, -2);             // m value
+        if (!lua_istable(tolua_S, -1)) {
+            lua_pop(tolua_S, 1);             // m
+            lua_newtable(tolua_S);           // m t
+            lua_pushstring(tolua_S, item.c_str()); // m t name
+            lua_pushvalue(tolua_S, -2);      // m t name t
+            lua_rawset(tolua_S, -4);         // m t
+        }
+    }
 
 	lua_register_PluginChartboostLua_PluginChartboost(tolua_S);
 
+	if (nsLen > 1) {
+        lua_pop(tolua_S, nsLen - 1); // m
+    }
 	tolua_endmodule(tolua_S);
 
 	sdkbox::setProjectType("lua");
