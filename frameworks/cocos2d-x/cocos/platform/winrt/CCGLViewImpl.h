@@ -1,6 +1,7 @@
 /****************************************************************************
 Copyright (c) 2010 cocos2d-x.org
 Copyright (c) Microsoft Open Technologies, Inc.
+Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
 http://www.cocos2d-x.org
 
@@ -34,7 +35,6 @@ THE SOFTWARE.
 #include "platform/CCCommon.h"
 #include "platform/winrt/InputEvent.h"
 #include "platform/CCGLView.h"
-#include <agile.h>
 
 #include <wrl/client.h>
 

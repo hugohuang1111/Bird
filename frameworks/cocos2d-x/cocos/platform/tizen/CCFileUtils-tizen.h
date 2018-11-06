@@ -1,5 +1,6 @@
 /****************************************************************************
- Copyright (c) 2014 Chukong Technologies Inc.
+ Copyright (c) 2014-2016 Chukong Technologies Inc.
+ Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
  http://www.cocos2d-x.org
 
@@ -44,7 +45,7 @@ NS_CC_BEGIN
 class CC_DLL FileUtilsTizen : public FileUtils
 {
 public:
-    /* override funtions */
+    /* override functions */
 	virtual bool init() override;
 
     virtual std::string getWritablePath() const override;

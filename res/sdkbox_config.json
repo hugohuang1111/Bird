@@ -212,8 +212,6 @@
                 "AdColony",
                 "AdMob",
                 "Chartboost",
-                "InMobi",
-                "LeadBolt",
                 "Appnext"
             ],
             "placements": [
@@ -225,7 +223,7 @@
                             "unit": "AdMob"
                         },
                         {
-                            "weight": 10,
+                            "weight": 30,
                             "name": "video",
                             "unit": "AdColony"
                         },
@@ -233,16 +231,6 @@
                             "weight": 10,
                             "name": "Default",
                             "unit": "Chartboost"
-                        },
-                        {
-                            "weight": 10,
-                            "name": "video",
-                            "unit": "InMobi"
-                        },
-                        {
-                            "weight": 10,
-                            "name": "video",
-                            "unit": "LeadBolt"
                         },
                         {
                             "weight": 10,
@@ -450,8 +438,6 @@
                 "AdColony",
                 "AdMob",
                 "Chartboost",
-                "InMobi",
-                "LeadBolt",
                 "Appnext"
             ],
             "placements": [
@@ -463,7 +449,7 @@
                             "unit": "AdMob"
                         },
                         {
-                            "weight": 10,
+                            "weight": 30,
                             "name": "video",
                             "unit": "AdColony"
                         },
@@ -471,16 +457,6 @@
                             "weight": 10,
                             "name": "Default",
                             "unit": "Chartboost"
-                        },
-                        {
-                            "weight": 10,
-                            "name": "video",
-                            "unit": "InMobi"
-                        },
-                        {
-                            "weight": 10,
-                            "name": "video",
-                            "unit": "LeadBolt"
                         },
                         {
                             "weight": 10,

@@ -1,5 +1,6 @@
 /****************************************************************************
- Copyright (c) 2013 Chukong Technologies Inc.
+ Copyright (c) 2013-2016 Chukong Technologies Inc.
+ Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
  
  http://www.cocos2d-x.org
  
@@ -39,7 +40,7 @@ PhysicsJoint::PhysicsJoint()
 , _world(nullptr)
 , _enable(false)
 , _collisionEnable(true)
-, _destoryMark(false)
+, _destroyMark(false)
 , _tag(0)
 , _maxForce(PHYSICS_INFINITY)
 , _initDirty(true)

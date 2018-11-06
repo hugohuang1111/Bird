@@ -1,12 +1,12 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion PROP_COMPILE_SDK_VERSION.toInteger()
+    buildToolsVersion PROP_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion PROP_MIN_SDK_VERSION
+        targetSdkVersion PROP_TARGET_SDK_VERSION
         versionCode 1
         versionName "1.0"
     }
@@ -19,14 +19,12 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: '../java/libs',
-            include: ['*.jar'],
-            exclude: ['fabric.jar', 'twitter.jar', 'picasso*.jar', 'android-support-v4.jar', 'support-annotations-*.jar'])
+    implementation fileTree(dir: '../java/libs', include: ['*.jar'])
 }

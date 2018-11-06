@@ -1,3 +1,6 @@
+
+bird.temp/
+
 libcocos2dlua.so
 proguard-project.txt
 gdb.setup

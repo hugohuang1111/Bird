@@ -3,7 +3,7 @@ local CURRENT_MODULE_NAME = ...
 local MyApp = class("MyApp", cc.load("mvc").AppBase)
 
 function MyApp:onCreate()
-	cc.exports.app = self
+    cc.exports.app = self
     math.randomseed(os.time())
     self:loadRes()
     self:initPlugins()

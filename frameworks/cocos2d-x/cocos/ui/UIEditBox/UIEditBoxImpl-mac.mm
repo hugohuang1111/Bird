@@ -1,6 +1,7 @@
 /****************************************************************************
  Copyright (c) 2010-2012 cocos2d-x.org
  Copyright (c) 2012 Jozef Pridavok
+ Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
  
  http://www.cocos2d-x.org
  
@@ -28,8 +29,8 @@
 
 #include "ui/UIEditBox/UIEditBoxImpl-mac.h"
 #include "base/CCDirector.h"
+#include "base/ccUTF8.h"
 #include "ui/UIEditBox/UIEditBox.h"
-#include "deprecated/CCString.h"
 #include "ui/UIEditBox/Mac/CCUIEditBoxMac.h"
 
 NS_CC_BEGIN
@@ -98,6 +99,9 @@ NSFont* EditBoxImplMac::constructFont(const char *fontName, int fontSize)
     else
     {
         textFont = [NSFont fontWithName:fntName size:fontSize];
+        if (textFont == nil) {
+            textFont = [NSFont systemFontOfSize:fontSize];
+        }
     }
     
     return textFont;
@@ -161,6 +165,11 @@ void EditBoxImplMac::setNativeInputFlag(EditBox::InputFlag inputFlag)
 void EditBoxImplMac::setNativeReturnType(EditBox::KeyboardReturnType returnType)
 {
     [_sysEdit setReturnType:returnType];
+}
+
+void EditBoxImplMac::setNativeTextHorizontalAlignment(cocos2d::TextHAlignment alignment)
+{
+    [_sysEdit setTextHorizontalAlignment:alignment];
 }
 
 bool EditBoxImplMac::isEditing()

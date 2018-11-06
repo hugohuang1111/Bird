@@ -1,6 +1,7 @@
 /****************************************************************************
 Copyright (c) 2010 cocos2d-x.org
 Copyright (c) Microsoft Open Technologies, Inc.
+Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
 http://www.cocos2d-x.org
 
@@ -54,10 +55,10 @@ using namespace Windows::UI::ViewManagement;
 
 NS_CC_BEGIN
 
-static GLViewImpl* s_pEglView = NULL;
+static GLViewImpl* s_pEglView = nullptr;
 
 //////////////////////////////////////////////////////////////////////////
-// impliment GLView
+// implement GLView
 //////////////////////////////////////////////////////////////////////////
 
 // Initialize the DirectX resources required to run.
@@ -408,7 +409,7 @@ GLViewImpl::GLViewImpl()
 GLViewImpl::~GLViewImpl()
 {
 	CC_ASSERT(this == s_pEglView);
-    s_pEglView = NULL;
+    s_pEglView = nullptr;
 
 	// TODO: cleanup 
 }

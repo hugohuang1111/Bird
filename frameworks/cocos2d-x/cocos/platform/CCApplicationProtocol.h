@@ -1,6 +1,7 @@
 /****************************************************************************
 Copyright (c) 2010-2012 cocos2d-x.org
-Copyright (c) 2013-2014 Chukong Technologies Inc.
+Copyright (c) 2013-2016 Chukong Technologies Inc.
+Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
 http://www.cocos2d-x.org
 
@@ -29,6 +30,7 @@ THE SOFTWARE.
 #include "platform/CCPlatformMacros.h"
 #include "base/CCScriptSupport.h"
 #include "base/CCAutoreleasePool.h"
+#include "base/ccTypes.h"
 
 NS_CC_BEGIN
 
@@ -46,18 +48,18 @@ public:
      */
     enum class Platform
     {
-        OS_WINDOWS,/** Windows */
-        OS_LINUX,/** Linux */
-        OS_MAC,/** Mac*/
-        OS_ANDROID,/** Android */
-        OS_IPHONE,/** Iphone */
-        OS_IPAD,/** Ipad */
-        OS_BLACKBERRY,/** BLACKBERRY */
-        OS_NACL,/** Nacl */
-        OS_EMSCRIPTEN,/** Emscripten */
-        OS_TIZEN,/** Tizen */
-        OS_WINRT,/** Windows Store Applications */
-        OS_WP8/** Windows Phone Applications */
+        OS_WINDOWS,     /**< Windows */
+        OS_LINUX,       /**< Linux */
+        OS_MAC,         /**< Mac OS X*/
+        OS_ANDROID,     /**< Android */
+        OS_IPHONE,      /**< iPhone */
+        OS_IPAD,        /**< iPad */
+        OS_BLACKBERRY,  /**< BlackBerry */
+        OS_NACL,        /**< Native Client in Chrome */
+        OS_EMSCRIPTEN,  /**< Emscripten */
+        OS_TIZEN,       /**< Tizen */
+        OS_WINRT,       /**< Windows Runtime Applications */
+        OS_WP8          /**< Windows Phone 8 Applications */
     };
 
     /**
@@ -102,6 +104,7 @@ public:
     * @lua NA
     */
     virtual void setAnimationInterval(float interval) = 0;
+    virtual void setAnimationInterval(float interval, SetIntervalReason reason) = 0;
 
     /** Subclass override the function to set OpenGL context attribution instead of use default value.
     * And now can only set six attributions:redBits,greenBits,blueBits,alphaBits,depthBits,stencilBits.

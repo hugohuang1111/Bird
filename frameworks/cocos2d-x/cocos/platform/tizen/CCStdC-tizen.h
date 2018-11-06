@@ -1,5 +1,6 @@
 /****************************************************************************
- Copyright (c) 2014 Chukong Technologies Inc.
+ Copyright (c) 2014-2016 Chukong Technologies Inc.
+ Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
  http://www.cocos2d-x.org
 
@@ -48,12 +49,6 @@
 #ifndef MAX
 #define MAX(x,y) (((x) < (y)) ? (y) : (x))
 #endif  // MAX
-
-// some function linux do not have
-#define tanf tan
-#define sqrtf sqrt
-#define cosf cos
-#define sinf sin
 
 #endif // CC_TARGET_PLATFORM == CC_PLATFORM_TIZEN
 

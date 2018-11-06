@@ -1,6 +1,7 @@
 /****************************************************************************
 Copyright (c) 2012 cocos2d-x.org
-Copyright (c) 2013-2014 Chukong Technologies Inc.
+Copyright (c) 2013-2016 Chukong Technologies Inc.
+Copyright (c) 2017-2018 Xiamen Yaji Software Co., Ltd.
 
 http://www.cocos2d-x.org
 
@@ -26,7 +27,7 @@ THE SOFTWARE.
 #include "platform/android/jni/JniHelper.h"
 #include <string.h>
 #include "base/CCDirector.h"
-#include "../CCApplication.h"
+#include "platform/CCApplication.h"
 #include "platform/CCFileUtils.h"
 #include "base/ccUTF8.h"
 
