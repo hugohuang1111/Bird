@@ -1,2 +1,5 @@
 /build
 /.externalNativeBuild
+
+# this folder is copy from RPOJECT_ROOT/res, RPOJECT_ROOT/src, RPOJECT_ROOT/config.json,
+assets/
