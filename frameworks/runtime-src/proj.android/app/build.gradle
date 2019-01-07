@@ -10,8 +10,8 @@ android {
         applicationId "com.sdkbox.app.Bird"
         minSdkVersion PROP_MIN_SDK_VERSION
         targetSdkVersion PROP_TARGET_SDK_VERSION
-        versionCode 16
-        versionName "1.0.16"
+        versionCode 17
+        versionName "1.0.17"
         multiDexEnabled true
 
         externalNativeBuild {
@@ -80,8 +80,8 @@ android {
             debuggable false
             jniDebuggable false
             renderscriptDebuggable false
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             if (project.hasProperty("RELEASE_STORE_FILE")) {
                 signingConfig signingConfigs.release
